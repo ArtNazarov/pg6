@@ -38,6 +38,8 @@ private slots:
 
     void on_btnApplyChanges_clicked();
 
+    void on_btnGenPass_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

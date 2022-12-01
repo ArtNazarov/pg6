@@ -15,7 +15,8 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     modellist.cpp \
-    modelrecord.cpp
+    modelrecord.cpp \
+    randomstringmaster.cpp
 
 HEADERS += \
     dataloader.h \
@@ -23,7 +24,8 @@ HEADERS += \
     encryptpasswords.h \
     mainwindow.h \
     modellist.h \
-    modelrecord.h
+    modelrecord.h \
+    randomstringmaster.h
 
 FORMS += \
     mainwindow.ui

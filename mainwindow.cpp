@@ -6,6 +6,7 @@
 #include "modelrecord.h"
 #include <QTableView>
 #include <QStringListModel>
+#include "randomstringmaster.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -119,5 +120,12 @@ void MainWindow::on_btnApplyChanges_clicked()
 
     modelToWidget();
 
+}
+
+
+void MainWindow::on_btnGenPass_clicked()
+{
+    QString newPass = RandomStringMaster::rand_str(10);
+    ui->lePassword->setText(newPass);
 }
 
