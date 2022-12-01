@@ -129,3 +129,14 @@ void MainWindow::on_btnGenPass_clicked()
     ui->lePassword->setText(newPass);
 }
 
+
+void MainWindow::on_btnRemoveElem_clicked()
+{
+    int z = this->current_item;
+    if ( (z>=0) && ( z<this->list->items->count() ) ){
+        this->list->items->removeAt(z);
+        modelToWidget();
+    }
+
+}
+

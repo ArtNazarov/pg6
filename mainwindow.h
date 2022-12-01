@@ -40,6 +40,8 @@ private slots:
 
     void on_btnGenPass_clicked();
 
+    void on_btnRemoveElem_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

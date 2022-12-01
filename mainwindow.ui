@@ -19,7 +19,7 @@
      <rect>
       <x>0</x>
       <y>350</y>
-      <width>241</width>
+      <width>201</width>
       <height>30</height>
      </rect>
     </property>
@@ -163,7 +163,7 @@
      <rect>
       <x>0</x>
       <y>310</y>
-      <width>241</width>
+      <width>201</width>
       <height>30</height>
      </rect>
     </property>
@@ -205,6 +205,19 @@
     </property>
     <property name="text">
      <string>придумать</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnRemoveElem">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>310</y>
+      <width>161</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Удалить из списка</string>
     </property>
    </widget>
   </widget>
