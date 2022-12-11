@@ -24,10 +24,10 @@ void DataLoader::doLoad(ModelList* ml)
       while (!sIn.atEnd()) {
          ModelRecord* item = new ModelRecord();
 
-         item->login =  e->xoring_dec(  sIn.readLine() , pasw);
-         item->password = e->xoring_dec( sIn.readLine(), pasw);
-         item->url = e->xoring_dec( sIn.readLine(), pasw);
-         item->note = e->xoring_dec(  sIn.readLine() , pasw);
+         item->login =  e->crypt_dec(  sIn.readLine() , pasw);
+         item->password = e->crypt_dec( sIn.readLine(), pasw);
+         item->url = e->crypt_dec( sIn.readLine(), pasw);
+         item->note = e->crypt_dec(  sIn.readLine() , pasw);
 
         ml->addItem( item  );
 
@@ -68,13 +68,14 @@ void DataLoader::doLoadFromSqlite(ModelList* ml){
 
        ModelRecord* item = new ModelRecord();
 
-       item->login =  e->xoring_dec(  login , pasw);
-       item->password = e->xoring_dec( password, pasw);
-       item->url = e->xoring_dec( url, pasw);
-       item->note = e->xoring_dec(  note , pasw);
+       item->login =  e->crypt_dec(  login , pasw);
+       item->password = e->crypt_dec( password, pasw);
+       item->url = e->crypt_dec( url, pasw);
+       item->note = e->crypt_dec(  note , pasw);
 
        ml->addItem( item  );
 
 
     }
+    delete e;
 }

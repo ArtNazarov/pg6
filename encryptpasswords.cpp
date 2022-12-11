@@ -1,46 +1,105 @@
 #include "encryptpasswords.h"
+#include <QByteArray>
+#include <QTextCodec>
+#include <QDebug>
+
 
 EncryptPasswords::EncryptPasswords()
 {
+ qDebug() << "test";
+}
+
+void debug_arr(QByteArray arr){
+
+    for (int i=0;i<arr.size();i++){
+        qDebug() << arr[i] << " | ";
+    };
+
+    qDebug() << "\n\r";
 
 }
 
-QString EncryptPasswords::xoring_enc(QString inputStr, QString pasw){
+QString EncryptPasswords::crypt_enc(QString inputStr, QString pasw){
+
+
+
     QString res = "";
 
     int k = 0;
-    for (int i=0;i<inputStr.count();i++){
 
-        int chr1 = inputStr.at(i).toLatin1();
-        int chr2 = pasw.at(k).toLatin1();
+    QTextCodec* defaultTextCodec = QTextCodec::codecForName("UTF-8");
+
+    QByteArray input_bytes = defaultTextCodec->fromUnicode(inputStr);
+    QByteArray pasw_bytes = defaultTextCodec->fromUnicode(pasw);
+    QByteArray out_bytes = QByteArray(input_bytes.size(), 0);
+    debug_arr(input_bytes);
+    debug_arr(pasw_bytes);
+    debug_arr(out_bytes);
 
 
-        res = res + QChar(32+ (chr1 ^ chr2));
+
+    for (int i=0;i<input_bytes.size();i++){
+
+       char chr1 = input_bytes[i];
+       char chr2 = pasw_bytes[k];
+
+
+       if (chr2 > 90){
+            out_bytes[i] = chr1 + 1;
+       }
+       else
+       {
+           out_bytes[i] = chr1 - 1 ;
+       };
 
         k++;
 
         if (k>=pasw.count()) k = 0;
     }
+
+    debug_arr(out_bytes);
+
+    res = QString::fromUtf8(out_bytes);
 
     return res;
 }
 
-QString EncryptPasswords::xoring_dec(QString inputStr, QString pasw){
+QString EncryptPasswords::crypt_dec(QString inputStr, QString pasw){
     QString res = "";
 
     int k = 0;
-    for (int i=0;i<inputStr.count();i++){
 
-        int chr1 = inputStr.at(i).toLatin1()-32;
-        int chr2 = pasw.at(k).toLatin1();
+    QTextCodec* defaultTextCodec = QTextCodec::codecForName("UTF-8");
+
+    QByteArray input_bytes = defaultTextCodec->fromUnicode(inputStr);
+    QByteArray pasw_bytes = defaultTextCodec->fromUnicode(pasw);
+    QByteArray out_bytes = QByteArray(input_bytes.size(), 0);
+    debug_arr(input_bytes);
+    debug_arr(pasw_bytes);
+    debug_arr(out_bytes);
 
 
-        res = res + QChar(chr1 ^ chr2);
+    for (int i=0;i<input_bytes.size();i++){
+
+       char chr1 = input_bytes[i];
+       char chr2 = pasw_bytes[k];
+
+       if (chr2 > 90){
+            out_bytes[i] = chr1 - 1;
+       }
+       else
+       {
+           out_bytes[i] = chr1 + 1;
+       };
 
         k++;
 
         if (k>=pasw.count()) k = 0;
     }
+
+    debug_arr(out_bytes);
+
+    res = QString::fromUtf8(out_bytes);
 
     return res;
 }

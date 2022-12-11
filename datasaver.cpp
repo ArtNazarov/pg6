@@ -22,10 +22,10 @@ void DataSaver::doSave(ModelList* ml)
        QTextStream s(&fOut);
        for (int i = 0; i < ml->items->count(); i++){
 
-            s << e->xoring_enc( ml->items->at(i).login, pasw) << '\n';
-            s << e->xoring_enc( ml->items->at(i).password, pasw) << '\n';
-            s << e->xoring_enc( ml->items->at(i).url, pasw) << '\n';
-            s << e->xoring_enc( ml->items->at(i).note, pasw) << '\n';
+            s << e->crypt_enc( ml->items->at(i).login, pasw) << '\n';
+            s << e->crypt_enc( ml->items->at(i).password, pasw) << '\n';
+            s << e->crypt_enc( ml->items->at(i).url, pasw) << '\n';
+            s << e->crypt_enc( ml->items->at(i).note, pasw) << '\n';
 
          };
      fOut.close();
@@ -64,10 +64,10 @@ void DataSaver::doSaveInSqlite(ModelList* ml){
        for (int i = 0; i < ml->items->count(); i++){
 
 
-            login = e->xoring_enc( ml->items->at(i).login, pasw) ;
-            password = e->xoring_enc( ml->items->at(i).password, pasw);
-            url = e->xoring_enc( ml->items->at(i).url, pasw);
-            note = e->xoring_enc( ml->items->at(i).note, pasw);
+            login = e->crypt_enc( ml->items->at(i).login, pasw) ;
+            password = e->crypt_enc( ml->items->at(i).password, pasw);
+            url = e->crypt_enc( ml->items->at(i).url, pasw);
+            note = e->crypt_enc( ml->items->at(i).note, pasw);
 
 
             QString req =  "INSERT INTO passwords (id, login, password, url, note ) VALUES (:Id, :Login, :Password, :Url, :Note)";

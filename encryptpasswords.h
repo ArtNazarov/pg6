@@ -7,8 +7,8 @@ class EncryptPasswords
 {
 public:
     EncryptPasswords();
-    QString xoring_enc(QString inputStr, QString pasw);
-    QString xoring_dec(QString inputStr, QString pasw);
+    QString crypt_enc(QString inputStr, QString pasw);
+    QString crypt_dec(QString inputStr, QString pasw);
 
 };
 
