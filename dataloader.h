@@ -11,6 +11,7 @@ public:
     QString filename;
     DataLoader();
     void doLoad(ModelList* ml);
+    void doLoadFromSqlite(ModelList *ml);
 };
 
 #endif // DATALOADER_H

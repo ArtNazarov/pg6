@@ -11,6 +11,8 @@ public:
     QString filename;
     DataSaver();
     void doSave(ModelList* ml);
+    void doSaveInSqlite(ModelList *ml);
+    void initSqlite();
 };
 
 #endif // DATASAVER_H

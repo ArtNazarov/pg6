@@ -31,7 +31,10 @@ void MainWindow::saveData(){
                                tr("Data files (*.dat)"));
  DataSaver* dw = new DataSaver();
  dw->filename = this->filename;
- dw->doSave(this->list);
+ if (ui->chkAsSqlite->isChecked())
+     dw->doSaveInSqlite(this->list);
+  else
+    dw->doSave(this->list);
  delete dw;
 
 }
@@ -42,6 +45,9 @@ void MainWindow::loadData(){
                                   tr("Data files (*.dat)"));
     DataLoader* dl = new DataLoader();
     dl->filename = this->filename;
+    if (ui->chkAsSqlite->isChecked()) {
+    dl->doLoadFromSqlite(this->list); }
+    else
     dl->doLoad(this->list);
     delete dl;
 }
