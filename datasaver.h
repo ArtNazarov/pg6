@@ -8,6 +8,7 @@
 class DataSaver
 {
 public:
+    QString filename;
     DataSaver();
     void doSave(ModelList* ml);
 };

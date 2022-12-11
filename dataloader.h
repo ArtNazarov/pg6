@@ -8,6 +8,7 @@
 class DataLoader
 {
 public:
+    QString filename;
     DataLoader();
     void doLoad(ModelList* ml);
 };

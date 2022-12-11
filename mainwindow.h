@@ -14,6 +14,7 @@ class MainWindow : public QMainWindow
 
 public:
     int current_item = 0;
+    QString filename;
     ModelList* list;
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
@@ -22,11 +23,7 @@ public:
     void modelToWidget();
 
 private slots:
-    void on_pushButton_clicked();
 
-    void on_pushButton_2_clicked();
-
-    void on_pushButton_3_clicked();
 
     void on_btnAddData_clicked();
 

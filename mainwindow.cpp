@@ -7,12 +7,14 @@
 #include <QTableView>
 #include <QStringListModel>
 #include "randomstringmaster.h"
+#include <QFileDialog>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     list = new ModelList();
+    //ui->lbFileName->setText( this->filename );
     ui->setupUi(this);
 }
 
@@ -23,15 +25,23 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::saveData(){
-
+ this->filename = QFileDialog::getSaveFileName(this,
+                                tr("Save File"),
+                               "/home/",
+                               tr("Data files (*.dat)"));
  DataSaver* dw = new DataSaver();
+ dw->filename = this->filename;
  dw->doSave(this->list);
  delete dw;
 
 }
 void MainWindow::loadData(){
-
+   this->filename = QFileDialog::getOpenFileName(this,
+                                   tr("Open File"),
+                                  "/home/",
+                                  tr("Data files (*.dat)"));
     DataLoader* dl = new DataLoader();
+    dl->filename = this->filename;
     dl->doLoad(this->list);
     delete dl;
 }

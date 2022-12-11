@@ -13,7 +13,7 @@ void DataSaver::doSave(ModelList* ml)
 {
     QString pasw = "h7yads";
     EncryptPasswords* e = new EncryptPasswords();
-     QFile fOut("data.dat");
+     QFile fOut(filename);
      if (fOut.open(QFile::WriteOnly | QFile::Text)) {
        QTextStream s(&fOut);
        for (int i = 0; i < ml->items->count(); i++){

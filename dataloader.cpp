@@ -15,7 +15,7 @@ void DataLoader::doLoad(ModelList* ml)
     EncryptPasswords* e = new EncryptPasswords();
     ml->items->clear();
 
-    QFile fIn("data.dat");
+    QFile fIn(this->filename);
     if (fIn.open(QFile::ReadOnly | QFile::Text)) {
       QTextStream sIn(&fIn);
       while (!sIn.atEnd()) {
