@@ -6,174 +6,189 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>683</width>
-    <height>395</height>
+    <width>854</width>
+    <height>399</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>PG6</string>
   </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <property name="sizePolicy">
-    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
+   <property name="maximumSize">
+    <size>
+     <width>3024</width>
+     <height>3024</height>
+    </size>
+   </property>
    <property name="autoFillBackground">
     <bool>true</bool>
    </property>
-   <widget class="QWidget" name="horizontalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>661</width>
-      <height>317</height>
-     </rect>
+   <layout class="QHBoxLayout" name="horizontalLayout_4">
+    <property name="sizeConstraint">
+     <enum>QLayout::SetNoConstraint</enum>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_3">
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QLabel" name="lbFileName">
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="lbItemIndex">
-         <property name="text">
-          <string>Номер записи</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="lbLogin">
-         <property name="text">
-          <string>Логин</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="leLogin"/>
-       </item>
-       <item>
-        <widget class="QLabel" name="lbPassword">
-         <property name="text">
-          <string>Пароль</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <item>
-          <widget class="QLineEdit" name="lePassword"/>
-         </item>
-         <item>
-          <widget class="QPushButton" name="btnGenPass">
-           <property name="text">
-            <string>придумать</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <widget class="QLabel" name="lbUrl">
-         <property name="text">
-          <string>Адрес сайта</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="leUrl"/>
-       </item>
-       <item>
-        <widget class="QLabel" name="lbNote">
-         <property name="text">
-          <string>Примечание</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="leNote"/>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_2"/>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
-       <item>
-        <widget class="QLabel" name="lbList">
-         <property name="text">
-          <string>Список</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QListView" name="listView"/>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
-       <item>
-        <widget class="QPushButton" name="btnApplyChanges">
-         <property name="text">
-          <string>Сохранить изменения</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btnSaveData">
-         <property name="text">
-          <string>Сохранить список в файл</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btnLoadFromFile">
-         <property name="text">
-          <string>Загрузить список из файла</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btnRemoveElem">
-         <property name="text">
-          <string>Удалить из списка</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btnAddData">
-         <property name="text">
-          <string>Добавить в список</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="chkAsSqlite">
-         <property name="text">
-          <string>Формат Sqlite</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="33,33,33">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetNoConstraint</enum>
+      </property>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QLabel" name="lbFileName">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbItemIndex">
+          <property name="text">
+           <string>Номер записи</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbLogin">
+          <property name="text">
+           <string>Логин</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="leLogin"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbPassword">
+          <property name="text">
+           <string>Пароль</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLineEdit" name="lePassword"/>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnGenPass">
+            <property name="text">
+             <string>придумать</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbUrl">
+          <property name="text">
+           <string>Адрес сайта</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="leUrl"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbNote">
+          <property name="text">
+           <string>Примечание</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="leNote"/>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QLabel" name="lbList">
+          <property name="text">
+           <string>Список</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QListView" name="listView"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QPushButton" name="btnApplyChanges">
+          <property name="text">
+           <string>Сохранить изменения</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnSaveData">
+          <property name="text">
+           <string>Сохранить список в файл</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnLoadFromFile">
+          <property name="text">
+           <string>Загрузить список из файла</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnRemoveElem">
+          <property name="text">
+           <string>Удалить из списка</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnAddData">
+          <property name="text">
+           <string>Добавить в список</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="chkAsSqlite">
+          <property name="text">
+           <string>Формат Sqlite</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>683</width>
+     <width>854</width>
      <height>25</height>
     </rect>
    </property>
